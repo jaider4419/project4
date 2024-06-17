@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Walls")
         {
+            SceneManager.LoadScene("Level1");
             Debug.Log("Wall hit");
         }
         
