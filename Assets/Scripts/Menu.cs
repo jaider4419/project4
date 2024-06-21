@@ -7,6 +7,19 @@ public class Menu : MonoBehaviour
 {
     public string sceneName;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            LoadLevel1();
+        }
+    }
+
+    void LoadLevel1()
+    {
+        SceneManager.LoadScene(sceneName);
+        Debug.Log("1 PRESSED");
+    }
     public void startGame()
     {
         SceneManager.LoadScene(sceneName);
@@ -17,4 +30,5 @@ public class Menu : MonoBehaviour
         Application.Quit();
         Debug.Log("Quitting.");
     }
+
 }
