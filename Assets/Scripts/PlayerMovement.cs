@@ -48,6 +48,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Next scene");
         }
 
+        if (collision.gameObject.tag == "Oops")
+        {
+            SceneManager.LoadScene("WrongWay");
+        }
+
     }
 
 }
