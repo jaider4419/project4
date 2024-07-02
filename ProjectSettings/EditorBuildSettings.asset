@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WrongWay.unity
     guid: 2382ff94aec2c1f4286fbfc22f60c482
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: a0b4134ecfab7f443beda2432e55118d
   m_configObjects: {}
