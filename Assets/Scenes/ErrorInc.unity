@@ -316,7 +316,7 @@ MonoBehaviour:
   - {fileID: 2143297337}
   - {fileID: 2126378949}
   - {fileID: 1228829074}
-  sceneToLoad: Level3
+  sceneToLoad: LevelCrazy
   delayBeforeLoading: 1
 --- !u!4 &1032404709
 Transform:

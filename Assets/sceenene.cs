@@ -7,6 +7,6 @@ public class sceenene : MonoBehaviour
 {
  public void scnaeanek()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("LevelCrazy");
     }
 }

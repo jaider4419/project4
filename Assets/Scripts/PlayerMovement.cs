@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "Oops")
         {
-            SceneManager.LoadScene("WrongWay");
+            SceneManager.LoadScene("Level3");
         }
 
     }
