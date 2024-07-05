@@ -53,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadScene("Level3");
         }
 
+        if (collision.gameObject.tag == "Jumpscare")
+        {
+            SceneManager.LoadScene("Jumpscare");
+        }
+
     }
 
 }

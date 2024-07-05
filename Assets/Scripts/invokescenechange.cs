@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class invokescenechange : MonoBehaviour
 {
+
+    public string sceneName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,6 @@ public class invokescenechange : MonoBehaviour
 
     void BacktoLevel3()
     {
-        SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene(sceneName);
     }
 }

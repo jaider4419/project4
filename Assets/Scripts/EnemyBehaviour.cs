@@ -1,25 +1,49 @@
+using System.Collections;
 using UnityEngine;
 
-public class EnemyBehavior : MonoBehaviour
+public class EnemyBehaviour : MonoBehaviour
 {
-    public Transform player;
-    public float moveSpeed = 3f;
+    public float speed = 2.0f;
+    private Transform playerTransform;
+    private bool isActive = false;
+
+    void Start()
+    {
+        // Start the coroutine to activate the enemy after 5 seconds
+        StartCoroutine(ActivateEnemy());
+    }
+
+    IEnumerator ActivateEnemy()
+    {
+        // Wait for 5 seconds
+        yield return new WaitForSeconds(5.0f);
+
+        // Activate the enemy
+        isActive = true;
+    }
 
     void Update()
     {
-        if (player != null)
+        if (isActive)
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-        }
-    }
+            // Find the player GameObject if not already found
+            if (playerTransform == null)
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                if (player != null)
+                {
+                    playerTransform = player.transform;
+                }
+            }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            // Reload the scene
-            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            // Move towards the player
+            if (playerTransform != null)
+            {
+                Vector3 direction = playerTransform.position - transform.position;
+                direction.Normalize();
+
+                transform.position += direction * speed * Time.deltaTime;
+            }
         }
     }
 }
